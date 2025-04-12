@@ -184,9 +184,7 @@ Visit: http://localhost:3000
 ```
 
 ### 🧠 Project Structure
-arduino
-Copy
-Edit
+```bash
 luxecart/
 ├── app/
 │   ├── layout.tsx
@@ -202,6 +200,7 @@ luxecart/
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── README.md
+```
 
 ### 🔧 Useful Commands
 ```bash
