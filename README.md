@@ -23,12 +23,15 @@ LuxeCart is a modern e-commerce application built using **Next.js (App Router)**
 ```bash
 npx create-next-app@latest luxecart --typescript --app
 cd luxecart
-
+```
+### 2️⃣ Install Dependencies
+```bash
 npm install firebase zustand
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
-
-3️⃣ Tailwind CSS Configuration
+```
+### 3️⃣ Tailwind CSS Configuration
+```bash
 tailwind.config.ts
 ts
 Copy
@@ -44,6 +47,7 @@ module.exports = {
   },
   plugins: [],
 };
+
 app/globals.css
 css
 Copy
@@ -51,7 +55,10 @@ Edit
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-4️⃣ Google Font Setup (Optional)
+```
+
+### 4️⃣ Google Font Setup (Optional)
+```bash
 Install via next/font:
 
 app/layout.tsx
@@ -83,7 +90,10 @@ export default function RootLayout({
     </html>
   );
 }
-5️⃣ Firebase Configuration
+```
+
+### 5️⃣ Firebase Configuration
+```bash
 Install Firebase
 bash
 Copy
@@ -110,17 +120,10 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
-.env.local
-env
-Copy
-Edit
-NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-6️⃣ Zustand Store Setup
+```
+
+### 6️⃣ Zustand Store Setup
+```bash
 store/useUserStore.ts
 ts
 Copy
@@ -136,7 +139,11 @@ export const useUserStore = create<UserState>((set) => ({
   user: null,
   setUser: (user) => set({ user }),
 }));
-7️⃣ Create Global Provider
+
+```
+
+### 7️⃣ Create Global Provider
+```bash
 app/providers.tsx
 tsx
 Copy
@@ -148,7 +155,10 @@ import { ReactNode } from 'react';
 export function Providers({ children }: { children: ReactNode }) {
   return <>{children}</>;
 }
-8️⃣ Add Default Home Page
+```
+
+### 8️⃣ Add Default Home Page
+```bash
 app/page.tsx
 tsx
 Copy
@@ -162,14 +172,18 @@ export default function Home() {
     </main>
   );
 }
-9️⃣ Start the Development Server
+```
+
+### 9️⃣ Start the Development Server
+```bash
 bash
 Copy
 Edit
 npm run dev
 Visit: http://localhost:3000
+```
 
-🧠 Project Structure
+### 🧠 Project Structure
 arduino
 Copy
 Edit
@@ -188,7 +202,9 @@ luxecart/
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── README.md
-🔧 Useful Commands
+
+### 🔧 Useful Commands
+```bash
 Command	Description
 npm run dev	Start local development server
 npm run build	Build app for production
